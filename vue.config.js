@@ -7,12 +7,13 @@ function getPublicPath() {
 module.exports = {
   // transpileDependencies: ['vue-echarts', 'resize-detector'],
   runtimeCompiler: true,
-  publicPath: getPublicPath(),
+  // publicPath: getPublicPath(),
   assetsDir: 'static',
   configureWebpack: {
     // Set up all the aliases we use in our app.
     resolve: {
       alias: require('./aliases.config').webpack,
+      // alias: ,
     },
     performance: {
       // Only enable performance hints for production builds,

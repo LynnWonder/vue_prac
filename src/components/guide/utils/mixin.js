@@ -18,6 +18,7 @@ export default {
             if (!this.targetComp) {
                 if (this.targetCompId) {
                     const comp = guideSelector.query(this.targetCompId)
+                    console.info('comp===>',comp)
                     if (comp) {
                         // first time got target
                         this.targetComp = comp
@@ -48,6 +49,7 @@ export default {
             this.$router.replace(this.requiredPath)
         }
         document.body.classList.add('guide-body')
+        console.info('id===>',this.targetCompId)
         if (this.targetCompId) {
             this.trackTargetComp()
         }
