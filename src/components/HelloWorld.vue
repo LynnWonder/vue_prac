@@ -35,6 +35,10 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted(){
+    console.info('test====>')
+    console.info(process.env)
   }
 }
 </script>
