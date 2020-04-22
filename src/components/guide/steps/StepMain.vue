@@ -3,6 +3,7 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     import mixin from '../utils/mixin'
     import { getPosition } from '../utils/utils'
 
@@ -14,34 +15,42 @@
                 requiredPath: '/',
             }
         },
-        mounted(){
-            console.info('thisis s s s ')
-            console.info('id in====>', this.targetCompId)
-        },
         methods: {
+            ...mapActions('guide', ['finish']),
             unregisterTarget() {
-                this.targetComp.classList.remove('guide-target')
-                this.targetComp.removeEventListener('click', this.handleButtonClick)
-                console.info('=====>',1)
+                this.targetComp.classList.remove('guide-target', 'guide-position-relative')
             },
             registerTarget() {
-                this.targetComp.classList.add('guide-target')
-                this.targetComp.addEventListener('click', this.handleButtonClick)
+                this.targetComp.classList.add('guide-target', 'guide-position-relative')
+                this.trackPosition()
+            },
+            trackPosition() {
                 const position = getPosition(this.targetComp)
                 this.$emit('move-helper', position)
-                this.$emit('update-tip', 'aaa', {
-                    tipHint: 'bbb',
+                this.$emit('update-tip', 'Welcome to Your App', {
+                    tipPosition: 'bottom',
+                    tipHint: {
+                        type: 'button',
+                        content: 'next',
+                        // click: () => this.goNext(true),
+                        click: () => this.finish(),
+                    },
                 })
 
                 const handPosition = {
-                    top: position.top + position.height / 2 + 5,
-                    left: position.left + position.width / 2 - 25,
+                    top: position.top + position.height / 2 + 182,
+                    left: position.left + position.width / 2 - 20,
                 }
                 this.$emit('set-hand', handPosition)
-                console.info('=====>',2)
-            },
-            handleButtonClick() {
-                this.goNext()
+
+                this.trackPositionHandler = setTimeout(() => this.trackPosition(), 16)
             },
         },
+        beforeDestroy() {
+            if (this.trackPositionHandler) {
+                clearTimeout(this.trackPositionHandler)
+                this.trackPositionHandler = null
+            }
+        },
     }
+</script>

@@ -18,7 +18,6 @@ export default {
             if (!this.targetComp) {
                 if (this.targetCompId) {
                     const comp = guideSelector.query(this.targetCompId)
-                    console.info('comp===>',comp)
                     if (comp) {
                         // first time got target
                         this.targetComp = comp
@@ -44,7 +43,11 @@ export default {
             event.stopPropagation()
         },
     },
+    created() {
+      console.info('created===>')
+    },
     mounted() {
+        console.info('mounted====>',this.$route.path)
         if (this.requiredPath && this.$route.path !== this.requiredPath) {
             this.$router.replace(this.requiredPath)
         }

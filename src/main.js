@@ -25,4 +25,3 @@ const app=new Vue({
   render: h => h(App),
 }).$mount('#app')
 guideSelector.register(app)
-console.info(require('../aliases.config').webpack)

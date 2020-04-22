@@ -3,7 +3,7 @@
     v-if="tip"
     class="tip"
     :class="`tip-${tipPosition}`"
-    :style="{ left: tipLeft, top: tipTop, width: $ccI18n.guideStepTipWidth }"
+    :style="{ left: tipLeft, top: tipTop, width: 300 }"
   >
     <div class="content">{{ tip }}</div>
     <div v-if="computedHint" class="tip-hint">

@@ -6,7 +6,6 @@ export default {
     return this.search(this.vm, key) || this.domSearch(key)
   },
   domSearch(key) {
-    console.info('======>',document.querySelector(`[guide-key="${key}"]`))
     return document.querySelector(`[guide-key="${key}"]`)
   },
   search(node, key) {

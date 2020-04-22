@@ -38,13 +38,11 @@ export default {
 
   computed: {
     ...mapState('guide', ['currentStep']),
-    ...mapState('session', ['currentUser']),
 
     totalSteps() {
       return steps.length
     },
     currentStepComponent() {
-      console.info('current===>',this.currentStep,steps[0])
       return steps[this.currentStep]
     },
   },
