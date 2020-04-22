@@ -2,12 +2,13 @@
 const svgoConfig = require('./svgo-config.json')
 function getPublicPath() {
   //todo
+  return '/'
 }
 
 module.exports = {
   // transpileDependencies: ['vue-echarts', 'resize-detector'],
   runtimeCompiler: true,
-  // publicPath: getPublicPath(),
+  publicPath: getPublicPath(),
   assetsDir: 'static',
   configureWebpack: {
     // Set up all the aliases we use in our app.

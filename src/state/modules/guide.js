@@ -1,4 +1,4 @@
-import { getGuideInfo, putGuideInfo } from '../../services/guide'
+import { getGuideInfo, putGuideInfo } from '@services/guide'
 const guideStore = {
     namespaced: true,
 

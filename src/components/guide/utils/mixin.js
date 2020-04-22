@@ -43,16 +43,11 @@ export default {
             event.stopPropagation()
         },
     },
-    created() {
-      console.info('created===>')
-    },
     mounted() {
-        console.info('mounted====>',this.$route.path)
         if (this.requiredPath && this.$route.path !== this.requiredPath) {
             this.$router.replace(this.requiredPath)
         }
         document.body.classList.add('guide-body')
-        console.info('id===>',this.targetCompId)
         if (this.targetCompId) {
             this.trackTargetComp()
         }
