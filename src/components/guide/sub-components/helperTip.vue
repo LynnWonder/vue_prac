@@ -1,10 +1,5 @@
 <template>
-  <div
-    v-if="tip"
-    class="tip"
-    :class="`tip-${tipPosition}`"
-    :style="{ left: tipLeft, top: tipTop, width: 300 }"
-  >
+  <div v-if="tip" class="tip" :class="`tip-${tipPosition}`" :style="{ left: tipLeft, top: tipTop, width: 300 }">
     <div class="content">{{ tip }}</div>
     <div v-if="computedHint" class="tip-hint">
       <div class="hint-seperator"></div>

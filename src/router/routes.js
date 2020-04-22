@@ -1,28 +1,28 @@
 const router = [
-    {
-        path: '/',
-        component: () => lazyLoadView(import('../components/HelloWorld')),
-        meta: {
-            authRequired: true,
-        },
+  {
+    path: '/',
+    component: () => lazyLoadView(import('../components/HelloWorld')),
+    meta: {
+      authRequired: true,
     },
-    {
-        path: '*',
-        redirect: '404',
-    },
+  },
+  {
+    path: '*',
+    redirect: '404',
+  },
 ]
 
 function removeUnusedRouter(r) {
-    if (!r) {
-        return
+  if (!r) {
+    return
+  }
+  for (let i = r.length - 1; i >= 0; i--) {
+    if (!r[i]) {
+      r.splice(i, 1)
+    } else {
+      removeUnusedRouter(r[i].children)
     }
-    for (let i = r.length - 1; i >= 0; i--) {
-        if (!r[i]) {
-            r.splice(i, 1)
-        } else {
-            removeUnusedRouter(r[i].children)
-        }
-    }
+  }
 }
 
 removeUnusedRouter(router)
@@ -46,27 +46,27 @@ export default router
 // component: () => import('@views/my-view')
 //
 function lazyLoadView(AsyncView) {
-    const AsyncHandler = () => ({
-        component: AsyncView,
-        // A component to use while the component is loading.
-        // loading: require('@views/_loading').default,
-        // Delay before showing the loading component.
-        // Default: 200 (milliseconds).
-        delay: 400,
-        // A fallback component in case the timeout is exceeded
-        // when loading the component.
-        // error: require('@views/_timeout').default,
-        // Time before giving up trying to load the component.
-        // Default: Infinity (milliseconds).
-        timeout: 10000,
-    })
+  const AsyncHandler = () => ({
+    component: AsyncView,
+    // A component to use while the component is loading.
+    // loading: require('@views/_loading').default,
+    // Delay before showing the loading component.
+    // Default: 200 (milliseconds).
+    delay: 400,
+    // A fallback component in case the timeout is exceeded
+    // when loading the component.
+    // error: require('@views/_timeout').default,
+    // Time before giving up trying to load the component.
+    // Default: Infinity (milliseconds).
+    timeout: 10000,
+  })
 
-    return Promise.resolve({
-        functional: true,
-        render(h, { data, children }) {
-            // Transparently pass any props or children
-            // to the view component.
-            return h(AsyncHandler, data, children)
-        },
-    })
+  return Promise.resolve({
+    functional: true,
+    render(h, { data, children }) {
+      // Transparently pass any props or children
+      // to the view component.
+      return h(AsyncHandler, data, children)
+    },
+  })
 }

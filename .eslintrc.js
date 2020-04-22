@@ -15,9 +15,8 @@ module.exports = {
   },
 
   parserOptions: {
-    // sourceType: 'script',
     sourceType: 'module',
-    // parser: 'babel-eslint',
+    parser: 'babel-eslint',
   },
 
   overrides: [],

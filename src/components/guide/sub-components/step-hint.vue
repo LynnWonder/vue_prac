@@ -2,8 +2,8 @@
   <div class="step-hint">
     <a-progress :percent="percent" type="circle" class="progress" />
     <div>
-      <span class="current">第 {{current}} 步 /&nbsp;</span>
-      <span class="total">总共 {{total}} 步</span>
+      <span class="current">第 {{ current }} 步 /&nbsp;</span>
+      <span class="total">总共 {{ total }} 步</span>
     </div>
   </div>
 </template>
