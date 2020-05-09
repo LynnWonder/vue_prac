@@ -3,7 +3,7 @@
     <layer v-if="guideState === 'guiding'" />
     <runner v-if="guideState === 'guiding'" />
     <a-modal
-      :visible="guideState === 'init'"
+      :visible="guideState === 'initial'"
       title="开始引导"
       :close-on-press-escape="false"
       :mask-closable="false"
@@ -41,7 +41,7 @@ export default {
   },
 
   mounted() {
-    // this.fetchInfo()
+    this.fetchInfo()
   },
 
   components: {

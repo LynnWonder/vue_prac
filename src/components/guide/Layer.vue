@@ -16,9 +16,9 @@
       ok-text="确认取消"
       cancel-text="继续引导"
       @ok="finishGuide"
-      :z-index="10000000">
-    </a-modal
+      :z-index="10000000"
     >
+    </a-modal>
   </div>
 </template>
 
@@ -48,8 +48,8 @@ export default {
     async openFeedback() {
       // await this.openOncallForUser()
       this.$notice({
-        title: "请进入反馈页反馈",
-        desc: "会第一时间为您响应。",
+        title: '请进入反馈页反馈',
+        desc: '会第一时间为您响应。',
         duration: 10000,
       })
     },

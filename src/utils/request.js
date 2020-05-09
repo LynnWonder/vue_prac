@@ -1,6 +1,4 @@
 import axios from 'axios'
-import store from '@state/store'
-
 
 const _initialOptions = {
   baseURL: process.env.VUE_APP_HOST,
@@ -16,11 +14,10 @@ instance.interceptors.response.use(
   function(error) {
     if (error.response) {
       if (error.response.status === 401) {
-        store.dispatch('session/logIn')
+        console.info('login error')
       } else {
-        store.dispatch('globalError', error.response.data)
+        console.info('globalError')
       }
-      testLogError(error)
       return Promise.reject(error.response.data)
     } else {
       let message = (typeof error === 'object' ? error.message : error) || ''
@@ -30,7 +27,6 @@ instance.interceptors.response.use(
 
       if (message.startsWith('Network Error')) {
         message = '网络错误'
-        // const now = dayjs()
       }
       return Promise.reject(message)
     }
