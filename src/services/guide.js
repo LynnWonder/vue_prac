@@ -1,7 +1,9 @@
 import { instance as request } from '@/utils/request'
 
 export async function getGuideInfo() {
-  return request.get('/guide')
+  const data = await request.get('/guide')
+  console.info('data', data)
+  return data
 }
 
 export async function putGuideInfo(guideInfo) {

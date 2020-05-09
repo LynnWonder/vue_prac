@@ -10,13 +10,6 @@ const guideStore = {
   },
 
   mutations: {
-    saveAll(state, payload) {
-      state.guideState = payload.guideState || 'initial'
-      state.currentStep = payload.currentStep || 0
-      state.serviceId = payload.serviceId || ''
-      state.functionName = payload.functionName || ''
-    },
-
     saveGuideState(state, payload) {
       state.guideState = payload
     },
@@ -33,6 +26,7 @@ const guideStore = {
   actions: {
     async fetchInfo({ commit }) {
       const info = await getGuideInfo()
+      console.info('====>', info)
       commit('saveGuideState', info.guideState || 'initial')
       commit('saveCurrentStep', info.currentStep || 0)
     },
@@ -63,15 +57,15 @@ const guideStore = {
       commit('saveGuideState', 'guiding')
       commit('saveCurrentStep', 0)
       await putGuideInfo({
-          guideState: 'guiding',
-          currentStep: 0,
+        guideState: 'guiding',
+        currentStep: 0,
       })
     },
 
     async finish({ commit }) {
       await commit('saveGuideState', 'finish')
       await putGuideInfo({
-          guideState: 'finish',
+        guideState: 'finish',
       })
     },
   },
