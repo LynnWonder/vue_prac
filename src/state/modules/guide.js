@@ -3,7 +3,7 @@ const guideStore = {
   namespaced: true,
 
   state: {
-    guideState: 'finish',
+    guideState: '',
     currentStep: 0,
     serviceId: '',
     functionName: '',
@@ -17,14 +17,12 @@ const guideStore = {
     saveCurrentStep(state, payload) {
       state.currentStep = payload
     },
-
-    saveFunctionName(state, payload) {
-      state.functionName = payload
-    },
   },
 
   actions: {
     async fetchInfo({ commit }) {
+      console.info('in====>')
+      console.info('aaaaa')
       const info = await getGuideInfo()
       console.info('====>', info)
       commit('saveGuideState', info.guideState || 'initial')
@@ -46,7 +44,6 @@ const guideStore = {
     async reset({ commit }) {
       commit('saveGuideState', 'init')
       commit('saveCurrentStep', 0)
-      commit('saveFunctionName', '')
       await putGuideInfo({
         guideState: 'initial',
         currentStep: 0,

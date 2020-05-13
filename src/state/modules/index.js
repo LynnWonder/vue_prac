@@ -8,44 +8,6 @@ const modulesCache = {}
 const storeData = { modules: {} }
 
 ;(function updateModules() {
-  if (process.env.NODE_ENV === 'test') {
-    // This condition actually should detect if it's an Node environment
-    if (typeof require.context === 'undefined') {
-      const fs = require('fs')
-      const path = require('path')
-
-      require.context = (base = '.', scanSubDirectories = false, regularExpression = /\.js$/) => {
-        const files = {}
-
-        function readDirectory(directory) {
-          fs.readdirSync(directory).forEach((file) => {
-            const fullPath = path.resolve(directory, file)
-            const filePath = `./${file}`
-
-            if (fs.statSync(fullPath).isDirectory()) {
-              if (scanSubDirectories) readDirectory(fullPath)
-
-              return
-            }
-
-            if (!regularExpression.test(fullPath)) return
-
-            files[filePath] = true
-          })
-        }
-
-        readDirectory(path.resolve(__dirname, base))
-
-        function Module(file) {
-          return require(file)
-        }
-
-        Module.keys = () => Object.keys(files)
-
-        return Module
-      }
-    }
-  }
   // Allow us to dynamically require all Vuex module files.
   // https://webpack.js.org/guides/dependency-management/#require-context
   const requireModule = require.context(

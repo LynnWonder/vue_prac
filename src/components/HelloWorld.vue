@@ -7,6 +7,7 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
+    <h2>{{ info.msg }}</h2>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li
@@ -50,15 +51,24 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import Guide from './guide/Guide.vue'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
   },
-
+  computed: {
+    ...mapState('cloudFn', ['info']),
+  },
   components: {
     Guide,
+  },
+  methods: {
+    ...mapActions('cloudFn', ['fetchInfo']),
+  },
+  created() {
+    this.fetchInfo()
   },
 }
 </script>

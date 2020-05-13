@@ -39,8 +39,11 @@ export default {
       this.finish()
     },
   },
-
+  created() {
+    console.info('=====>')
+  },
   mounted() {
+    console.info('here====>')
     this.fetchInfo()
   },
 
