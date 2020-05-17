@@ -7,9 +7,12 @@ const _initialOptions = {
 
 export const instance = axios.create(_initialOptions)
 
+// interceptor set
 instance.interceptors.response.use(
   function({ data }) {
-    return Promise.resolve(data.data)
+    // todo checkout what's wrong wiz data.data
+    console.info('data=====>', data)
+    return Promise.resolve(data)
   },
   function(error) {
     if (error.response) {
