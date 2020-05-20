@@ -12,16 +12,16 @@ Vue.use(Antd)
 Vue.mixin({
   data() {
     return {
-      process:{
+      process: {
         env: process.env,
-      }
+      },
     }
-  }
+  },
 })
 
-const app=new Vue({
+const app = new Vue({
   router,
   store,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app')
 guideSelector.register(app)

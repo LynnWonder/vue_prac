@@ -29,7 +29,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 .step-hint {
   position: absolute;
   left: 50%;

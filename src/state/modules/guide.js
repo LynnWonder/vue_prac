@@ -21,10 +21,7 @@ const guideStore = {
 
   actions: {
     async fetchInfo({ commit }) {
-      console.info('in====>')
-      console.info('aaaaa')
       const info = await getGuideInfo()
-      console.info('====>', info)
       commit('saveGuideState', info.guideState || 'initial')
       commit('saveCurrentStep', info.currentStep || 0)
     },

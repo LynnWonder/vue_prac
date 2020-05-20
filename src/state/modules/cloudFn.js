@@ -15,8 +15,6 @@ const cloudFnStore = {
   actions: {
     async fetchInfo({ commit }) {
       const info = await getCloudInfo()
-      console.info('===>')
-      console.info(info)
       commit('saveCloudFnState', info || {})
     },
   },

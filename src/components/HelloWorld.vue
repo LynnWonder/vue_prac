@@ -7,7 +7,8 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <h2>{{ info.msg }}</h2>
+    <span style="font-weight: bold">from firebase:</span>
+    <h2 style="color:mediumvioletred">{{ info.msg }}</h2>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li
