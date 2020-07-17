@@ -9,10 +9,11 @@ export const instance = axios.create(_initialOptions)
 
 // interceptor set
 instance.interceptors.response.use(
-  function({ data }) {
-    // todo checkout what's wrong wiz data.data
-    console.info('data=====>', data)
-    return Promise.resolve(data)
+  function(res) {
+    // we must use res.data rather than res cause there is circular reference in res.config
+    // so we has to use res.data
+    console.info('data=====>', res.data)
+    return Promise.resolve(res.data)
   },
   function(error) {
     if (error.response) {
