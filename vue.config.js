@@ -10,6 +10,7 @@ module.exports = {
   runtimeCompiler: true,
   publicPath: getPublicPath(),
   assetsDir: 'static',
+  lintOnSave: process.env.NODE_ENV === 'development',
   configureWebpack: {
     // Set up all the aliases we use in our app.
     resolve: {
@@ -30,6 +31,11 @@ module.exports = {
       .options(svgoConfig)
     // https://cli.vuejs.org/guide/troubleshooting.html#symbolic-links-in-node-modules
     config.resolve.symlinks(false)
+    // https://cli.vuejs.org/migrating-from-v3/#vue-cli-service
+    config.optimization.minimizer('terser').tap((args) => {
+      args[0].terserOptions.compress.drop_console = true
+      return [...args]
+    })
   },
   css: {
     // Enable CSS source maps.

@@ -1,10 +1,7 @@
 const router = [
   {
     path: '/',
-    component: () => lazyLoadView(import('../components/HelloWorld')),
-    meta: {
-      authRequired: true,
-    },
+    component: () => lazyLoadView(import('../components/HelloWorld.vue')),
   },
   {
     path: '*',
