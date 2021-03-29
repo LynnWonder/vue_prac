@@ -4,6 +4,10 @@ const router = [
     component: () => lazyLoadView(import('../components/HelloWorld.vue')),
   },
   {
+    path: '/markdown',
+    component: () => lazyLoadView(import('../components/Markdown.vue')),
+  },
+  {
     path: '*',
     redirect: '404',
   },

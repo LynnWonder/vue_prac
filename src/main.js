@@ -5,6 +5,9 @@ import router from './router'
 import store from './state/store'
 import guideSelector from './components/guide/utils/selector.js'
 import 'ant-design-vue/dist/antd.css'
+import 'highlight.js/styles/github.css'
+import 'github-markdown-css'
+
 Vue.config.productionTip = false
 
 Vue.use(Antd)
