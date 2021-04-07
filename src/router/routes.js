@@ -8,6 +8,10 @@ const router = [
     component: () => lazyLoadView(import('../components/Markdown.vue')),
   },
   {
+    path: '/ellipsis',
+    component: () => lazyLoadView(import('../components/Ellipsis.vue')),
+  },
+  {
     path: '*',
     redirect: '404',
   },

@@ -2336,6 +2336,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+batch-processor@1.0.0:
+  version "1.0.0"
+  resolved "https://bnpm.byted.org/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
+  integrity sha1-dclcMrdI4IUNEMKxaPa9vpiRrOg=
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -4105,6 +4110,13 @@ elegant-spinner@^2.0.0:
   version "2.0.0"
   resolved "http://bnpm.byted.org/elegant-spinner/download/elegant-spinner-2.0.0.tgz#f236378985ecd16da75488d166be4b688fd5af94"
   integrity sha1-8jY3iYXs0W2nVIjRZr5LaI/Vr5Q=
+
+element-resize-detector@^1.2.1:
+  version "1.2.2"
+  resolved "https://bnpm.byted.org/element-resize-detector/-/element-resize-detector-1.2.2.tgz#bf7c3ff915957e4e62e86241ed2f9c86b078892b"
+  integrity sha1-v3w/+RWVfk5i6GJB7S+chrB4iSs=
+  dependencies:
+    batch-processor "1.0.0"
 
 elliptic@^6.0.0:
   version "6.5.2"
@@ -11247,6 +11259,15 @@ vue-loader@^15.9.1:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-overflow-ellipsis@^1.0.7:
+  version "1.0.7"
+  resolved "https://bnpm.byted.org/vue-overflow-ellipsis/-/vue-overflow-ellipsis-1.0.7.tgz#e707af8f9d6d658e4f77767b9966b7a7adc0112f"
+  integrity sha1-5wevj51tZY5Pd3Z7mWa3p63AES8=
+  dependencies:
+    core-js "^3.6.5"
+    element-resize-detector "^1.2.1"
+    vue "^2.6.11"
 
 vue-ref@^2.0.0:
   version "2.0.0"
