@@ -1,5 +1,10 @@
 <template>
   <div class="hello">
+    <div class="nav">
+      <router-link to="/markdown">Markdown</router-link>
+      <router-link to="/ellipsis">Ellipsis</router-link>
+    </div>
+
     <guide></guide>
     <h1 guide-key="main-page">{{ msg }}</h1>
     <p>
@@ -89,5 +94,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: bold;
 }
 </style>
