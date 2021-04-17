@@ -1,16 +1,12 @@
 <template>
   <div>
-    <ellipsis v-if="ellipsis" :content="content" :rows="2" @click-btn="hideMore(false)"></ellipsis>
-    <div class="ellipsis-content" v-else>
-      {{ content }}
-      <span class="btn" @click.stop="hideMore(true)">折叠</span>
-    </div>
+    <Ellipsis :content="content"> </Ellipsis>
+    <Ellipsis :content="short_content"> </Ellipsis>
   </div>
 </template>
 
 <script>
-import ellipsis from 'vue-overflow-ellipsis'
-import 'vue-overflow-ellipsis/dist/index.css'
+import Ellipsis from './subComponents/Ellipsis'
 
 const content = `
 根据发布该消息的某房产大V描述，曾经挂价2.5万元/平方米的香河富力新城，清明推出特价房单价仅8000元/平方米，且买房就送车位。
@@ -23,17 +19,18 @@ const content = `
 
 连番的降价让部分购房群体陷入观望状态，以期用更低的价格来成交买房。而在清明假期前夕，“富力新城尾盘‘跳水式’降价”的消息传出后，一些需求开始蠢蠢欲动。在香河北部新城的富力新城售楼处，前来看房、购房的北京购房者络绎不绝。截至目前，此次挂出的约300套的特价房源已售出近九成。
 
-
 `
+const short_content = 'this is a test, 短句测试'
 
 export default {
   name: 'App',
   components: {
-    ellipsis,
+    Ellipsis,
   },
   data() {
     return {
-      content: content,
+      content,
+      short_content,
       ellipsis: true,
     }
   },

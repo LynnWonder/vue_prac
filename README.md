@@ -26,7 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 项目结构
 ```
-├── README.md                           
+├── README.md
 ├── aliases.config.js
 ├── babel.config.js
 ├── firebase.json
@@ -41,26 +41,28 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 │   ├── assets
 │   │   └── logo.png
 │   ├── components
-│   │   ├── Ellipsis.vue                      // 文本省略组件
+│   │   ├── Ellipsis.vue
 │   │   ├── HelloWorld.vue
-│   │   ├── Markdown.vue                      // Markdown 实时编辑和预览组件
-│   │   └── guide
-│   │       ├── Guide.vue 
-│   │       ├── Layer.vue
-│   │       ├── Runner.vue
-│   │       ├── steps
-│   │       │   ├── StepMain.vue
-│   │       │   └── index.js
-│   │       ├── sub-components
-│   │       │   ├── hand-point-up.svg
-│   │       │   ├── hand.vue
-│   │       │   ├── helperTip.vue
-│   │       │   ├── helperWindow.vue
-│   │       │   └── step-hint.vue
-│   │       └── utils
-│   │           ├── mixin.js
-│   │           ├── selector.js
-│   │           └── utils.js
+│   │   ├── Markdown.vue
+│   │   ├── guide
+│   │   │   ├── Guide.vue
+│   │   │   ├── Layer.vue
+│   │   │   ├── Runner.vue
+│   │   │   ├── steps
+│   │   │   │   ├── StepMain.vue
+│   │   │   │   └── index.js
+│   │   │   ├── sub-components
+│   │   │   │   ├── hand-point-up.svg
+│   │   │   │   ├── hand.vue
+│   │   │   │   ├── helperTip.vue
+│   │   │   │   ├── helperWindow.vue
+│   │   │   │   └── step-hint.vue
+│   │   │   └── utils
+│   │   │       ├── mixin.js
+│   │   │       ├── selector.js
+│   │   │       └── utils.js
+│   │   └── subComponents
+│   │       └── Ellipsis.vue
 │   ├── design
 │   │   └── index.less
 │   ├── main.js
