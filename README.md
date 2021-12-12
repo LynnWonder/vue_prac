@@ -91,3 +91,20 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 注
 1. 项目已托管在 firebase 站点： https://vue-prac-1b976.web.app/ 
 2. 服务端项目放在 https://github.com/LynnWonder/fastify_prac
+
+## 项目优化
+### 使用 webp 优化网页加载速度，使体积减少
+```sh
+# 生成 webp 文件
+node imgmin.js 
+```
+#### 使用 modernizr 检测浏览器是否支持某些属性
+1. 配置 `.modernizr.js` 
+2. 添加 webpack loader 配置
+3. 添加 resolve 配置
+4. 启动，html 根元素上会添加相应的 class 类名
+
+### TODO
+- webpack 配置图片自动转化为 webp 格式 
+
+

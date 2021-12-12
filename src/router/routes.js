@@ -12,6 +12,10 @@ const router = [
     component: () => lazyLoadView(import('../components/Ellipsis.vue')),
   },
   {
+    path: '/webp',
+    component: () => lazyLoadView(import('../components/Webp.vue')),
+  },
+  {
     path: '*',
     redirect: '404',
   },

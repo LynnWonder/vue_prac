@@ -29,6 +29,11 @@ module.exports = {
       .use('svgo-loader')
       .loader('svgo-loader')
       .options(svgoConfig)
+    config.module
+      .rule('modernizr')
+      .test(/\.modernizrrc\.js$/)
+      .use('webpack-modernizr-loader?useConfigFile')
+      .loader('webpack-modernizr-loader')
     // https://cli.vuejs.org/guide/troubleshooting.html#symbolic-links-in-node-modules
     config.resolve.symlinks(false)
     // https://cli.vuejs.org/migrating-from-v3/#vue-cli-service

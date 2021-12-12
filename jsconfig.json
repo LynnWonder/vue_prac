@@ -79,6 +79,14 @@
         "src/services/index.vue",
         "src/services/index.less",
         "src/services/index.css"
+      ],
+      "modernizr$/*": ["./.modernizrrc.js/*"],
+      "modernizr$": [
+        "./.modernizrrc.js/index.js",
+        "./.modernizrrc.js/index.json",
+        "./.modernizrrc.js/index.vue",
+        "./.modernizrrc.js/index.less",
+        "./.modernizrrc.js/index.css"
       ]
     }
   },

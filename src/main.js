@@ -7,6 +7,7 @@ import guideSelector from './components/guide/utils/selector.js'
 import 'ant-design-vue/dist/antd.css'
 import 'highlight.js/styles/github.css'
 import 'github-markdown-css'
+import 'modernizr'
 
 Vue.config.productionTip = false
 

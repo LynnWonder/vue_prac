@@ -3,6 +3,7 @@
     <div class="nav">
       <router-link to="/markdown">Markdown</router-link>
       <router-link to="/ellipsis">Ellipsis</router-link>
+      <router-link to="/webp">Webp</router-link>
     </div>
 
     <guide></guide>

@@ -14,6 +14,7 @@ const aliases = {
   '@state': 'src/state',
   '@theme': 'src/design',
   '@services': 'src/services',
+  modernizr$: './.modernizrrc.js', // 方便快速找到 modernizr
 }
 
 module.exports = {
