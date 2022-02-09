@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const _initialOptions = {
   baseURL: process.env.VUE_APP_HOST,
-  withCredentials: true,
+  withCredentials: false,
 }
 
 export const instance = axios.create(_initialOptions)

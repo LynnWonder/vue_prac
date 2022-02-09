@@ -65,15 +65,10 @@ module.exports = {
     host: '127.0.0.1',
     port: 8081,
     proxy: {
+      // 在不设置 VUE_APP_HOST 且服务端未添加跨域配置的时候添加：如下配置内容可以实现跨域
       '/api': {
-        target: process.env.VUE_APP_HOST,
+        target: 'http://localhost:4000',
         changeOrigin: true,
-        cookieDomainRewrite: 'localhost',
-      },
-      '/passport': {
-        target: process.env.VUE_APP_HOST,
-        changeOrigin: true,
-        cookieDomainRewrite: 'localhost',
       },
     },
   },

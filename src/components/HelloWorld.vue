@@ -60,6 +60,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import Guide from './guide/Guide.vue'
+
 export default {
   name: 'HelloWorld',
   props: {

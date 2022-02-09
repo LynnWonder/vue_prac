@@ -104,6 +104,14 @@ node imgmin.js
 3. 添加 resolve 配置
 4. 启动，html 根元素上会添加相应的 class 类名
 
+### 关于跨域问题
+`webpack-dev-server` 可以用来本地起一个服务，可以通过在 `vue.config.js` 中的配置实现自定义端口
+
+以及开发环境下的跨域问题，参考 [devServer.proxy](https://cli.vuejs.org/zh/config/#devserver)
+
+注：服务端设置 `access-control-allow-origin` 为 `*` 暂时将 `withCredentials` 设置为 false
+
+
 ### TODO
 - webpack 配置图片自动转化为 webp 格式 
 
